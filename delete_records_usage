@@ -1,0 +1,26 @@
+NAME:
+delete_records.sh
+
+DESCRIPTION:
+The script allows the user to delete an existing student’s record based on Student ID when the user selects the option e in the main menu script (menu.sh).
+The script prompts for the studentID and performs input validation. In addition, the script will keep asking for a valid input if the given input is invalid
+
+
+SYNTAX:
+delete_records.sh
+
+
+EXAMPLES:
+$ delete_records.sh
+Enter Student ID >> 
+Invalid input. Please retry...
+Enter Student ID >> abc
+Invalid input. Please retry...
+Enter Student ID >> 123
+Invalid input. Please retry...
+Enter Student ID >> abc123
+Invalid input. Please retry...
+Enter Student ID >> 99999999
+StudentID record not found. Please retry...
+Enter Student ID >> 11223344
+StudentID record found...

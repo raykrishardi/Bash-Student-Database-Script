@@ -1,0 +1,253 @@
+NAME:
+menu.sh
+
+DESCRIPTION:
+The script presents a menu with the following operations that a script user may choose:
+a) Displaying the detailed records of all current students on the standard output
+b) Displaying only Student IDs, the GPAs, and the email addresses on the standard output
+c) Search for any student’s record and displaying that specific student’s detailed record
+d) Add new records to the database file (records.txt)
+e) Delete existing records from the database file (records.txt)
+f) Update existing records on specific record fields and save changes in the database file (records.txt)
+
+Once the user makes a selection and the selected operation has been completed, the main menu is refreshed and displayed again such that the
+script user could make another choice. The program is terminated when the user enter either q or Q.
+
+Appropriate error message (“Invalid option selected. Press Enter to continue...”) will be displayed if the user selects any input other than a, b, c, d, e, f, q or Q.
+Appropriate error message (“Selection not entered. Press Enter to continue...”) will be displayed if the user simply hits the Enter key instead of typing in any input.
+
+
+SYNTAX:
+menu.sh
+
+
+EXAMPLES:
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: 
+Selection not entered. Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: z
+Invalid option selected. Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: a
+
+Student ID   Title   Last Name   First Name   Degree   Teaching Period   Campus      No. of Units   Unit Code   Unit Grade   GPA   Email                    Nationality
+11223344     MR      TOM         JOHN         BIT      2016Sem1          CAULFIELD   1              FIT2065     2            2     jt1@student.monash.edu   AUST
+11225566     MR      RICK        MATHEW       BIT      2015Sem2          CLAYTON     1              FIT2065     3            3     mr1@student.monash.edu   INT
+22334455     MR      HARRY       PAUL         BCS      2016Sem1          BERWICK     1              FIT1008     4            4     ph1@student.monash.edu   AUST
+22445566     MR      HARRY       PAUL         BCS      2016Sem1          BERWICK     1              FIT2001     3            3     ph2@student.monash.edu   AUST
+33556677     MR      HENRY       PAUL         BCS      2015Sem2          CAULFIELD   1              FIT2065     2            2     ph3@student.monash.edu   AUST
+66778899     MS      HANSEN      PAULINE      BIT      2016Sem1          CLAYTON     1              FIT2001     2            2     ph1@student.monash.edu   INT
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: b
+
+Student ID   GPA   Email
+22334455     4     ph1@student.monash.edu
+11225566     3     mr1@student.monash.edu
+22445566     3     ph2@student.monash.edu
+11223344     2     jt1@student.monash.edu
+33556677     2     ph3@student.monash.edu
+66778899     2     ph1@student.monash.edu
+Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: c
+Pattern to search: pa
+
+Student ID   Title   Last Name   First Name   Degree   Teaching Period   Campus      No. of Units   Unit Code   Unit Grade   GPA   Email                    Nationality
+22334455     MR      HARRY       PAUL         BCS      2016Sem1          BERWICK     1              FIT1008     4            4     ph1@student.monash.edu   AUST
+22445566     MR      HARRY       PAUL         BCS      2016Sem1          BERWICK     1              FIT2001     3            3     ph2@student.monash.edu   AUST
+33556677     MR      HENRY       PAUL         BCS      2015Sem2          CAULFIELD   1              FIT2065     2            2     ph3@student.monash.edu   AUST
+66778899     MS      HANSEN      PAULINE      BIT      2016Sem1          CLAYTON     1              FIT2001     2            2     ph1@student.monash.edu   INT
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: d
+Enter Student ID >> 11111111
+Enter Title >> MR
+Enter Last Name >> LAY
+Enter First Name >> RAY
+Enter Degree >> BCS
+Enter Teaching Period >> 2017Sem1
+Enter Campus >> CLAYTON
+Enter No. of Units >> 4
+Enter Unit Code >> FIT1000 FIT2000 FIT3000 FIT4000
+Enter Student Email >> rk1@student.monash.edu
+Enter Student Nationality >> INT
+Record added to the database
+Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: e
+Enter Student ID >> 11111111
+StudentID record found...
+Record deleted from the database
+Press Enter to continue...
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: f
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: a
+Enter New Teaching Period >> 2017Sem1
+Record updated from the database
+Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: f
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: b
+Enter No. of Units >> 3
+Enter Unit Code >> FIT1000 FIT2000 FIT3000
+Record updated from the database
+Press Enter to continue...
+
+
+$ menu.sh
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: f
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> FIT1000
+Unit code found...
+Enter Student Grade >> 4
+Record updated from the database
+Press Enter to continue...
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: q
+
+
+$ menu.sh 
+Monash Student Database Main Menu
+
+a. Display detailed records of all current students
+b. Display Student ID, GPA, and Email Address of all current students
+c. Search for a specific student’s record with any record field
+d. Add a new student’s record
+e. Delete a student’s record based on Student ID
+f. Update a student’s record of specific fields
+q. Quit
+Your selection: Q

@@ -1,0 +1,286 @@
+NAME:
+update_records.sh
+
+DESCRIPTION:
+The script allows the user to update specific record fields of an existing student when the user selects the option f in the main menu script (menu.sh).
+The record fields that can be modified include Teaching Period, Number of Units, and Unit Grade.
+
+The script first prompts for the studentID in which the student's detail/details will be updated and performs input validation. 
+The script will keep asking for a valid input if the given input is invalid
+To update the Teaching Period, the user is prompted for the new Teaching Period detail.
+If the user intends to modify the number of units, the new Unit Codes would be read in and updated. In addition, unit grades and GPA grade will be initialised to zero
+To update the Unit Grade, the user is prompted for the specific Unit Code for which its grade is to be updated. In addition, the GPA is updated whenever the unit grades are modified.
+
+
+SYNTAX:
+update_records.sh
+
+
+EXAMPLES:
+$ update_records.sh
+Enter Student ID >> 
+Invalid input. Please retry...
+Enter Student ID >> abc
+Invalid input. Please retry...
+Enter Student ID >> 123
+Invalid input. Please retry...
+Enter Student ID >> abc123
+Invalid input. Please retry...
+Enter Student ID >> 99999999
+StudentID record not found. Please retry...
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: 
+Selection not entered. Press Enter to continue...
+Your selection: z
+Invalid option selected. Press Enter to continue...
+Your selection: a
+Enter New Teaching Period >> 
+Invalid input. Please retry...
+Enter New Teaching Period >> abc
+Invalid input. Please retry...
+Enter New Teaching Period >> 123
+Invalid input. Please retry...
+Enter New Teaching Period >> abc123
+Invalid input. Please retry...
+Enter New Teaching Period >> 2017Sem0
+Invalid input. Please retry...
+Enter New Teaching Period >> 2017Sem3
+Invalid input. Please retry...
+Enter New Teaching Period >> 2017sem1
+Invalid input. Please retry...
+Enter New Teaching Period >> 2017Sem1
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: b
+Enter No. of Units >> 
+[: -eq: unary operator expected
+[: -eq: unary operator expected
+[: -eq: unary operator expected
+[: -eq: unary operator expected
+Invalid input. Please retry...
+Enter No. of Units >> abc
+[: abc: integer expression expected
+[: abc: integer expression expected
+[: abc: integer expression expected
+[: abc: integer expression expected
+Invalid input. Please retry...
+Enter No. of Units >> abc123
+[: abc123: integer expression expected
+[: abc123: integer expression expected
+[: abc123: integer expression expected
+[: abc123: integer expression expected
+Invalid input. Please retry...
+Enter No. of Units >> 0
+Invalid input. Please retry...
+Enter No. of Units >> -1
+Invalid input. Please retry...
+Enter No. of Units >> 5
+Invalid input. Please retry...
+Enter No. of Units >> 1
+Enter Unit Code >>        
+Invalid input. Please retry...
+Enter Unit Code >> fit    
+Invalid input. Please retry...
+Enter Unit Code >> fit fit
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: b
+Enter No. of Units >> 2
+Enter Unit Code >> FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT
+[: FIT: binary operator expected
+[: too many arguments
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: b
+Enter No. of Units >> 3
+Enter Unit Code >> FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT FIT
+[: FIT: binary operator expected
+[: too many arguments
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT1000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: b
+Enter No. of Units >> 4
+Enter Unit Code >> FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT FIT
+Invalid input. Please retry...
+Enter Unit Code >> FIT FIT FIT FIT FIT
+[: FIT: binary operator expected
+[: too many arguments
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT1000 FIT3000 FIT4000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT1000 FIT4000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000 FIT1000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT2000 FIT4000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000 FIT3000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000 FIT3000 FIT4000
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> 
+Invalid input. Please retry...
+Enter Unit Code >> fit
+Invalid input. Please retry...
+Enter Unit Code >> fit fit
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000 FIT2000
+Invalid input. Please retry...
+Enter Unit Code >> FIT1000
+Unit code not found. Please retry...
+Enter Unit Code >> FIT2065
+Unit code found...
+Enter Student Grade >> 
+[: too many arguments
+Invalid input. Please retry...
+Enter Student Grade >> abc
+[: abc: integer expression expected
+Invalid input. Please retry...
+Enter Student Grade >> abc123
+[: abc123: integer expression expected
+Invalid input. Please retry...
+Enter Student Grade >> -1
+Invalid input. Please retry...
+Enter Student Grade >> 5
+Invalid input. Please retry...
+Enter Student Grade >> 0
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> FIT2065
+Unit code found...
+Enter Student Grade >> 1
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> FIT2065
+Unit code found...
+Enter Student Grade >> 2
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> FIT2065
+Unit code found...
+Enter Student Grade >> 3
+
+
+$ update_records.sh
+Enter Student ID >> 11223344
+StudentID record found...
+Select one of the record fields:
+a. Teaching Period
+b. Number of Units
+c. Unit Grade
+Your selection: c
+Enter Unit Code >> FIT2065
+Unit code found...
+Enter Student Grade >> 4
